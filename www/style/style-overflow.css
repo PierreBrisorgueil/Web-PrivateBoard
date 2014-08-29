@@ -1,0 +1,20 @@
+
+
+#content {
+	overflow:auto; 
+}
+
+#menu {
+	overflow-x: hidden;
+	overflow-y: auto;
+}
+
+
+#footer-left {
+	position:absolute;
+}
+
+
+#footer-right {
+	position:absolute;
+}

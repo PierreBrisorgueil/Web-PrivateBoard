@@ -1,0 +1,409 @@
+/* YourCreation.fr */
+
+
+/* 
+--------------------------------
+Corps et texte principaux de la page
+--------------------------------
+ */ 
+
+html{
+	background:#1e1e1e;	
+	color: #b2b2ad;
+	font:inherit;
+	font-size:200%
+}
+
+html, body{
+	width:100%;
+	margin:0px;
+}
+
+a{
+	color:#468f98;
+	text-decoration : none;	
+}
+a:hover{
+	color:#468f98;
+	text-decoration : underline;	
+}
+a:visited{
+	color:#5c7289;
+	text-decoration : none;	
+}
+
+input, textarea {
+	border-radius:3px;	
+	border: 1px #b9b9ba solid;
+}
+
+form{
+	border: 0px #fff solid;	
+}
+select  {background-color:#151515; color: #787878;}
+
+p {
+	position:relative;
+	margin:30px;
+	width:auto;
+}
+
+span{
+	color:#00aeff;	
+}
+span.bull {
+	color:#ff6600;	
+}
+
+
+/* 
+--------------------------------
+Top header
+--------------------------------
+ */ 
+
+#top {
+	background:url("../img/iPhone/iPhone_logov3.png") no-repeat top center #2c2c2c;
+	width:100%;
+	height:180px;	
+	margin:0px;
+	padding:0px;
+}
+
+.icon {
+	border: 1px #000 solid;
+	border-radius: 2px;	
+}
+
+#top .left {
+	margin-top: 50px;
+	float:left;
+	width:100%;
+	height:100px;
+}
+#top .left ul{
+	margin-top:17px;
+	list-style-type: none;
+	line-height:80px;
+}
+#top .left li a{
+	background: #293c4e;
+	color:#bdc3c7;	
+	margin-right:25px;
+	float:left;
+	display:block;
+	text-decoration:none;
+	text-align:center;
+	text-shadow: 1px 1px 1px #000;
+	width: 22%;
+	height:80px;
+	vertical-align: middle;
+	border-radius: 10px;
+	border: 2px solid #000;
+}
+#top .left li a.current {color: #fff;}
+#top .left li a:hover{
+	color:#fff;	
+}
+
+
+/* 
+--------------------------------
+Title Bar top
+--------------------------------
+ */ 
+
+#title {
+	margin:0;
+	height:45px;
+	background: #252525;
+	border-left: 1px solid #080808;
+	border-top: 1px solid #080808;
+	border-bottom: 1px solid #080808;
+	float:left;
+	position:relative;
+	width:100%;
+}
+#title  img {vertical-align:-2px;margin-right: 7px;}
+
+.titre{
+	color: #bbbbbb;
+	text-shadow: 1px 1px 1px #000;
+	font-size: 13px;
+	padding:5px;
+	padding-left:15px;
+}
+
+.r-center { text-align:center; top:0px;}
+
+
+/* 
+--------------------------------
+Menu left
+--------------------------------
+ */ 
+
+#menu {
+	position:relative;
+	margin:0;
+	left:0px;
+	float:left;
+	width:100%;
+	height:100px;
+	background: #1e1e1e;
+}
+
+#menu ul {
+	list-style-type: none;
+}
+#menu ul li #content_list {
+	float:left; 
+	height:20px;
+	margin-bottom:50px;
+	font-size: 120%;
+}
+
+#menu ul li #content_list.cat{background-image:url("../img/ico/folder.png");background-repeat: no-repeat;background-position: 10px 2px;}
+#menu ul li #content_list.cat-current{background-image:url("../img/ico/folder_blue.png");background-repeat: no-repeat;background-position: 10px 2px;}
+#menu ul li #content_list.cat:hover {background: #2c2c2c;background-image:url("../img/ico/folder_blue.png");background-repeat: no-repeat;background-position: 15px 2px; color:00aeff;}
+
+#menu ul li #content_list.personal{background-image:url("../img/ico/note.png");background-repeat: no-repeat;background-position: 10px 2px;}
+#menu ul li #content_list.personal-current{background-image:url("../img/ico/note_blue.png");background-repeat: no-repeat;background-position: 10px 2px;}
+#menu ul li #content_list.personal:hover {background: #2c2c2c;background-image:url("../img/ico/note_blue.png");background-repeat: no-repeat;background-position: 10px 2px;}
+
+
+#menu ul li #content_list a.url {
+	height:18px;
+	position: relative;
+	text-decoration:none;
+	padding-left:40px;
+	}	
+#menu ul li #content_list a.url {color:#ecf0f1;}
+#menu ul li #content_list a.url:hover {color:#fff;}
+
+/* 
+--------------------------------
+Content
+--------------------------------
+ */ 
+
+
+#content {
+	margin:0;
+	float:left;
+	position:relative;
+	width:100%;
+	background:url("../img/background_body_v3.png");
+	border: 1px solid #080808;
+}
+
+
+
+#content-form-zone {
+	position:absolute;
+	background:url("../img/background_body_connexion_v3.jpg") center center no-repeat #000;	
+	left:0px;
+	right:0px;
+	bottom:0px;
+	top:0px;
+}
+
+#content-form {
+	position:absolute;
+	width:300px;
+	height:200px;
+	top:50%;
+	left:50%;
+	margin-top:-100px;
+	margin-left:-150px;
+	background:url("../img/background_body_v4.png");	
+	border-radius:8px;
+	border: 1px solid #303030;
+	display: inline-block;	
+}
+
+#content-form input.un {background-color:#151515; color: #787878; border:1px solid #000; border-bottom:0px; border-radius:4px 4px 0px 0px; width:225px; height:25px;text-align:center;}
+#content-form input.un:focus {background-color:#0d0d0d;}
+
+#content-form input.deux {background-color:#151515; color: #787878; border:1px solid #000; border-radius:0px 0px 4px 4px; width:225px; height:25px;text-align:center;}
+#content-form input.deux:focus  {background-color:#0d0d0d;}
+
+#content-form input.trois {background-color:#0295da; color: #000; border:1px solid #000; border-radius:4px 4px 4px 4px; width:225px; height:25px;text-align:center;}
+#content-form input.trois:hover  {background-color:#00aeff;}
+
+
+/* 
+--------------------------------
+Footer
+--------------------------------
+ */ 
+
+#footer {
+	margin-top: 0px;
+	float:left;
+	position:relative;
+	width:100%;
+	height:45px;
+	background:#252525;
+	border-bottom: 1px solid #080808;
+	border-top: 1px solid #080808;
+}
+.footer {
+	color: #bbbbbb;
+	text-shadow: 1px 1px 1px #000;
+	font-size: 25px;
+	padding:6px;
+}
+
+
+
+
+/* 
+--------------------------------
+Supléments
+--------------------------------
+ */ 
+
+
+.text {
+	position:relative;
+	margin:auto;
+	background:url("../img/background_text.png");
+	border: 1px solid #080808;
+	border-radius:8px;
+	width:95%;
+	padding:8px;
+	font-size:13px;
+	margin-bottom:15px;
+	margin-top:40px;
+}
+
+.text input {background-color:#151515; color: #787878; border:1px solid #000; border-radius:4px; width:130px; height:18px;text-align:center;margin-left:5px;margin-right:15px;}
+.text #userlevel {width:40px;}
+.text input:focus {background-color:#0d0d0d;}
+
+.text input.valide {background-color:#151515; color: #787878; border:1px solid #000; border-radius:4px; width:150px; height:18px;text-align:center;margin-left:5px;margin-right:15px;}
+.text input.valide:focus {background-color:#0d0d0d;}
+
+.text input.valide {background-color:#0295da; color: #000; border:1px solid #000; border-radius:4px 4px 4px 4px; width:100px; height:22px;text-align:center;}
+.text input.valide:hover  {background-color:#00aeff;}
+
+/* 
+--------------------------------
+Tableaux
+--------------------------------
+ */ 
+
+table {
+	position:relative;
+	width:100%;
+	margin:auto;
+	margin-bottom:15px;
+	border:0px #e5e5e5 solid;
+	border-radius:8px;
+}
+
+table.full{width:100%;}
+
+table th{
+	background:url("../img/background_text.png");
+	color: #fff;
+	height: 50px;	
+}
+table th:hover{background:url("../img/background_text.png"); opacity:1;}
+
+table td{
+	text-align:center;
+	border-bottom:0px #595957 solid;
+	font-size:35px;
+}
+
+
+table tr{
+	height: 50px;
+background:url("../img/background_text.png");
+}
+table tr:hover{
+background:transparent;
+}
+
+table td.small{font-size:11px;}
+table td.name{text-align:left;padding-left:10px;}
+.trbutton{height:18px;}
+table td input.valide {background-color:#0295da; color: #000; border:1px solid #000; border-radius:4px 4px 4px 4px; width:70px; height:22px;text-align:center;}
+table td input.valide:hover  {background-color:#00aeff;}
+
+/* 
+--------------------------------
+Categories fichiers
+--------------------------------
+ */ 
+
+
+.categorie
+{
+	background:url('../img/iPhone/iPhone-perso2.png') no-repeat;
+	width:100px;
+	height:100px;
+}
+
+.cat-hd-1080p {background-position: 0 0px;}
+.cat-hd-720p {background-position: 0 -102px;}
+.cat-anime {background-position: 0 -204px;}
+.cat-apple {background-position: 0 -306px;}
+.cat-full-br {background-position: 0 -408px;}
+.cat-dvdr-series {background-position: 0 -510px;}
+.cat-dvdr {background-position: 0 -612px;}
+.cat-dvdrip-vostfr {background-position: 0 -714px;}
+.cat-dvdrip {background-position: 0 -816px;}
+.cat-doc {background-position: 0 -918px;}
+.cat-doc-hd {background-position: 0 -1020px;}
+.cat-flac {background-position: 0 -1125px;}
+.cat-pc-game {background-position: 0 -1230px;}
+.cat-concert {background-position: 0 -1334px;}
+.cat-tvpack {background-position: 0 -1436px;}
+.cat-ps {background-position: 0 -1538px;}
+.cat-psp {background-position: 0 -1640px;}
+.cat-sport {background-position: 0 -1742px;}
+.cat-emissions {background-position: 0 -1844px;}
+.cat-tv-vf {background-position: 0 -1946px;}
+.cat-tv-vo {background-position: 0 -2050px;}
+.cat-tv-vostfr {background-position: 0 -2154px;}
+.cat-tv-hd-vf {background-position: 0 -2258px;}
+.cat-tv-hd-vostfr {background-position: 0 -2360px;}
+.cat-wii {background-position: 0 -2462px;}
+.cat-window {background-position: 0 -2562px;}
+.cat-xbox360 {background-position: 0 -2664px;}
+.cat-ebook {background-position: 0 -2766px;}
+.cat-divers {background-position: 0 -2868px;}
+.cat-nitendo-ds {background-position: 0 -2970px;}
+
+
+
+
+/* 
+--------------------------------
+informations
+--------------------------------
+ */ 
+img.affiche{
+	position:relative;
+	height:250px;
+	margin:10px;
+	float:left;
+	border-radius:3px;
+	margin-right:30px;
+}
+
+
+#info_content
+{
+	position:relative;
+	text-align:justify;	
+	padding: 20px;
+	color: #fff;
+}
+
+
+
+

@@ -1,0 +1,44 @@
+
+.html5-progress-bar progress {
+	background-color: #f3f3f3;
+	border: 0;
+	width: 150px;
+	height: 10px;
+	border-radius: 9px;
+	margin:5px;
+}
+.html5-progress-bar progress::-webkit-progress-bar {
+	background-color: #f3f3f3;
+	border-radius: 9px;
+}
+.html5-progress-bar progress::-webkit-progress-value {
+	background: #8ed0eb;
+	background: -moz-linear-gradient(top,  #8ed0eb 0%, #56a7c9 100%);
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#8ed0eb), color-stop(100%,#56a7c9));
+	background: -webkit-linear-gradient(top,  #8ed0eb 0%,#56a7c9 100%);
+	background: -o-linear-gradient(top,  #8ed0eb 0%,#56a7c9 100%);
+	background: -ms-linear-gradient(top,  #8ed0eb 0%,#56a7c9 100%);
+	background: linear-gradient(to bottom,  #8ed0eb 0%,#56a7c9 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#8ed0eb', endColorstr='#56a7c9',GradientType=0 );
+	border-radius: 9px;
+}
+.html5-progress-bar progress::-moz-progress-bar {
+	background: #8ed0eb;
+	background: -moz-linear-gradient(top,  #8ed0eb 0%, #56a7c9 100%);
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#8ed0eb), color-stop(100%,#56a7c9));
+	background: -webkit-linear-gradient(top,  #8ed0eb 0%,#56a7c9 100%);
+	background: -o-linear-gradient(top,  #8ed0eb 0%,#56a7c9 100%);
+	background: -ms-linear-gradient(top,  #8ed0eb 0%,#56a7c9 100%);
+	background: linear-gradient(to bottom,  #8ed0eb 0%,#56a7c9 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#8ed0eb', endColorstr='#56a7c9',GradientType=0 );
+	border-radius: 9px;
+}
+.html5-progress-bar .progress-value {
+	padding: 0px 5px;
+	line-height: 20px;
+	margin-left: 5px;
+	font-size: 1em;
+	color: #a3a3a3;
+	height: 18px;
+	float: left;
+}
