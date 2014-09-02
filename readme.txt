@@ -1,6 +1,6 @@
 Création YourCreation.fr
 
-Nous serrons reconnaissant envers les moindres remerciements / dons pour ce projet. 
+Nous serrons reconnaissant envers les moindres remerciements / dons pour ce projet. (les infos pour les mises à jours ce situent en bas de la page)
 
 -------------------------------------------------------------------------------------
 -------------------------------------------------------------------------------------
@@ -110,5 +110,22 @@ Une fois cela fait, éditez le fichier "./inlude/config.php" dans le site web qu
 -------------------------------------------------------------------------------------
 
 ***** Rendez vous sur le site, connectez vous avec les id "admin" mdp "admin", Enjoy ;) ! pensez à créer un nouvel utilisateur admin et à supprimer celui par defaut.
+
+
+
+
+
+
+-------------------------------------------------------------------------------------
+------------------------------------UPDATE-------------------------------------------
+-------------------------------------------------------------------------------------
+v4 -> v4.0.1 
+changelog -> ajout d'une option utilisateur pour afficher les noms de fichiers torrents
+tuto -> copier les fichiers du www, en dehors du ./include/config.php
+     -> Exécuter le fichier /update/_last_update.php
+     -> Vérifier que cela fonctionne correctement en allant dans le pannel user option
+     -> supprimer le dossier /update/ 
+
+
 
 

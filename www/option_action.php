@@ -94,6 +94,30 @@ switch($action)
 		$connexion = null;
 		header('Location: option.php');  
 		break;
+    case "filename":
+		$filename = $_POST['filename'];
+		switch ($filename) {
+			case 0:
+				$select="0";
+				$username = $connexion->quote($_SESSION['login']); 
+				$selection = $connexion->quote($select); 
+				$count = $connexion->exec("UPDATE users SET userfilename = $selection WHERE username = $username");
+			break;
+			case 1:
+				$select="1";
+				$username = $connexion->quote($_SESSION['login']); 
+				$selection = $connexion->quote($select); 
+				$count = $connexion->exec("UPDATE users SET userfilename = $selection WHERE username = $username");
+			break;
+			default:
+				$select="0";
+				$username = $connexion->quote($_SESSION['login']); 
+				$selection = $connexion->quote($select); 
+				$count = $connexion->exec("UPDATE users SET userfilename = $selection WHERE username = $username");
+		}
+		$connexion = null;
+		header('Location: option.php');  
+		break;
     default;
 }
 

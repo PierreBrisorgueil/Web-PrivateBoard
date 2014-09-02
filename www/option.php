@@ -38,7 +38,7 @@ include("./include/menu_option.php");
 
 // on récupère l'heure de son dernier chargement de l'index
 $id = $connexion->quote($_SESSION['id']); 
-$resultats=$connexion->query("SELECT userstream, userstyle FROM users WHERE id = $id"); 
+$resultats=$connexion->query("SELECT userstream, userstyle, userfilename FROM users WHERE id = $id"); 
 $resultats->setFetchMode(PDO::FETCH_OBJ);
 $ligne = $resultats->fetch(); 
 
@@ -50,6 +50,9 @@ else{ $style = "---"; }
 
 if($ligne->userstream == "0"){ $stream = "Plugin web VLC media player"; }
 elseif($ligne->userstream == "1"){ $stream = "Plugin web Divx web player"; }
+
+if($ligne->userfilename == "0"){ $filename = "Noms des fichiers simplifiés"; }
+elseif($ligne->userfilename == "1"){ $filename = "Noms des fichiers torrents"; }
 
 ?>
 
@@ -77,6 +80,18 @@ elseif($ligne->userstream == "1"){ $stream = "Plugin web Divx web player"; }
 			  <select name="stream">
 			    <option value="0">Plugin web VLC media player</option>
 			    <option value="1">Plugin web Divx web player</option>
+			  </select>
+			  <input type="submit" value="Valider"  class="valide" />
+			</form>
+	</div>
+	<div class="text">
+		<span>FileName</span> Private Board : <span><b><i><?php echo $filename; ?></i></b></span>
+		<br /><br />
+		 <form method="post" action="option_action.php?action=filename">
+		   	<label for="filename"> Votre Type de nom de fichier : </label>
+			  <select name="filename">
+			    <option value="0">Noms des fichiers simplifiés</option>
+			    <option value="1">Noms des fichiers torrents</option>
 			  </select>
 			  <input type="submit" value="Valider"  class="valide" />
 			</form>

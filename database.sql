@@ -152,6 +152,7 @@ CREATE TABLE IF NOT EXISTS `users` (
   `userstyle` varchar(255) NOT NULL DEFAULT 'style.css',
   `userstream` tinyint(4) NOT NULL DEFAULT '0',
   `userlastip` varchar(128) NOT NULL DEFAULT 'none',
+  `userfilename` tinyint(4) NOT NULL DEFAULT '0',
   PRIMARY KEY (`id`)
 ) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=78 ;
 

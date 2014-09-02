@@ -174,6 +174,13 @@ while( $ligne = $resultats->fetch() )
 	
 	$compteur++;
 	
+	// recupération des préférences d'affichage
+	$id = $connexion->quote($_SESSION['id']); 
+	$pref=$connexion->query("SELECT userfilename FROM users WHERE id = $id"); 
+	$pref->setFetchMode(PDO::FETCH_OBJ);
+	$preferences = $pref->fetch(); 
+
+
 	// tri des saisons
 	$save_saison = $saison;
 	if($cat != "Series" && $cat != "Musiques"  && $cat != "autre" && $cat != ""  && $cat != "Films" && $cat != "eBooks")
@@ -200,8 +207,16 @@ while( $ligne = $resultats->fetch() )
 		
 	$Output .= detect_info($ligne->propername, $ligne->code_cat, $compteur);
 		
-	$Output .= '
-				<a href="'.$ligne->path. DIRECTORY_SEPARATOR .$ligne->fichier.'" title="'.$ligne->fichier.'">'.detect_new($ligne->temps,$LastLoad).give_etat($ligne->fichier).$ligne->propername.'</a>
+	if($preferences->userfilename == 0)
+	{
+		$Output .= '<a href="'.$ligne->path. DIRECTORY_SEPARATOR .$ligne->fichier.'" title="'.$ligne->fichier.'">'.detect_new($ligne->temps,$LastLoad).give_etat($ligne->fichier).$ligne->propername.'</a>';
+	}
+	else
+	{
+		$Output .= '<a href="'.$ligne->path. DIRECTORY_SEPARATOR .$ligne->fichier.'" title="'.$ligne->fichier.'">'.detect_new($ligne->temps,$LastLoad).give_etat($ligne->fichier).$ligne->fichier.'</a>';
+	}
+
+	$Output .= '	
 			</td>			
 			<td width="25px">'.$stream.'</td>	
 			<td width="70px" class="small">'.$ligne->taille.'</td>
