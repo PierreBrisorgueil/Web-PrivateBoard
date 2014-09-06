@@ -126,6 +126,11 @@ tuto -> copier les fichiers du www, en dehors du ./include/config.php
      -> Vérifier que cela fonctionne correctement en allant dans le pannel user option
      -> supprimer le dossier /update/ 
 
-
+v4.0.1 -> v4.0.2 
+changelog -> ajout des fichiers interdits sample / simples, ainsi que d’une fonction supprimant automatiquement les nouveaux fichiers interdits à chaque update
+tuto -> copier les fichiers du www, en dehors du ./include/config.php
+     -> Exécuter le fichier /update/_last_update.php
+     -> Vérifier que cela fonctionne correctement en voir si vaut fichiers samples on bien disparus de la liste de fichiers
+     -> supprimer le dossier /update/
 
 
