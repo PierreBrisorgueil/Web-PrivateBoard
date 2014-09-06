@@ -513,7 +513,9 @@ function detect_chaine($chaine, $type)
 									"/\.icns/",
 									"/\APEInject/",
 									"/\.NFO/",
-									"/\.plist/");  
+									"/\.plist/",
+									"/sample/",
+									"/samples");  
         		foreach($forbiden as $value)
 				{        
 					if(preg_match($value, $chaine)) $bool = true;
@@ -569,58 +571,56 @@ function tri_folderv4($directory, $recursive = true, $listDirs = false, $listFil
             	{
                 	if($listFiles)
                 	{
-                  		if (detect_chaine($file, "file_forbiden") != true)
-					{
-						$code_cat = detectHD($file) . detectV($file) . detectType($file);
-						$path = $directory . DIRECTORY_SEPARATOR . $file;
-						$info = stat($path);
-						$sub_taille = convertFileSize($info['size']);	
-						if($info['size'] > 100000) // si le fichier fait plus de 1 mo
+	                  	if (detect_chaine($file, "file_forbiden") != true)
 						{
-							// on sélectionne le nom de fichier le plus approprié ( folder or file)
-							$proper_name = clean_name($file, $directory);		
-							
-							$etat = detect_etat($file);
-							// si il n'est pas en dl, on l'insert dans la db car il devient notable etc ... 
-							if($etat == 0)
+							$code_cat = detectHD($file) . detectV($file) . detectType($file);
+							$path = $directory . DIRECTORY_SEPARATOR . $file;
+							$info = stat($path);
+							$sub_taille = convertFileSize($info['size']);	
+							if($info['size'] > 100000) // si le fichier fait plus de 1 mo
 							{
-								$detection_db = 0;
-								$_name = $connexion->quote($file); 
-								$resultats=$connexion->query("SELECT fichier, id FROM files WHERE fichier = $_name"); 
-								$resultats->setFetchMode(PDO::FETCH_OBJ);
-								while( $ligne = $resultats->fetch() ) 
+								// on sélectionne le nom de fichier le plus approprié ( folder or file)
+								$proper_name = clean_name($file, $directory);		
+								
+								$etat = detect_etat($file);
+								// si il n'est pas en dl, on l'insert dans la db car il devient notable etc ... 
+								if($etat == 0)
 								{
-									if($ligne->fichier == $file){$detection_db = 1;$id = $ligne->id;$array_clear[]=$file;}
-								}
-								$resultats->closeCursor();
-								if($detection_db == 0)
-								{
-	
+									$detection_db = 0;
 									$_name = $connexion->quote($file); 
-									$array_clear[]=$file;
-									if(isset($proper_name)){$_propername = $connexion->quote($proper_name); 	
-								}
-								else{$_propername = $connexion->quote($file);}
+									$resultats=$connexion->query("SELECT fichier, id FROM files WHERE fichier = $_name"); 
+									$resultats->setFetchMode(PDO::FETCH_OBJ);
+									while( $ligne = $resultats->fetch() ) 
+									{
+										if($ligne->fichier == $file){$detection_db = 1;$id = $ligne->id;$array_clear[]=$file;}
+									}
+									$resultats->closeCursor();
+									if($detection_db == 0)
+									{
+		
+										$_name = $connexion->quote($file); 
+										$array_clear[]=$file;
+										if(isset($proper_name)){$_propername = $connexion->quote($proper_name);}
+										else{$_propername = $connexion->quote($file);}
 
-								$_directory =  $connexion->quote($directory); 
-								$time = $info['mtime']; 
-								$_sub_taille = $connexion->quote($sub_taille); 
-								$_cat = $connexion->quote(TriSectionv4($code_cat)); 
-								$_code_cat = $connexion->quote($code_cat); 
-								$connexion->exec("INSERT INTO files(fichier, propername, path, temps, taille, code_cat, cat) VALUES ($_name, $_propername, $_directory, $time, $_sub_taille, $code_cat, $_cat)")
-									or die(print_r($connexion->errorInfo()));	 
-							}
+										$_directory =  $connexion->quote($directory); 
+										$time = $info['mtime']; 
+										$_sub_taille = $connexion->quote($sub_taille); 
+										$_cat = $connexion->quote(TriSectionv4($code_cat)); 
+										$_code_cat = $connexion->quote($code_cat); 
+										$connexion->exec("INSERT INTO files(fichier, propername, path, temps, taille, code_cat, cat) VALUES ($_name, $_propername, $_directory, $time, $_sub_taille, $code_cat, $_cat)")
+											or die(print_r($connexion->errorInfo()));	 
+									}
+								}
 							}
 						}
 					}
-				}
-             }
-         }
-     }
-     closedir($handle);
-     }
-     
-     return $arrayItems;
+             	}
+         	}
+     	}
+     	closedir($handle);
+    }
+    return $arrayItems;
  }
  
 
