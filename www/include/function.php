@@ -514,8 +514,10 @@ function detect_chaine($chaine, $type)
 									"/\APEInject/",
 									"/\.NFO/",
 									"/\.plist/",
-									"/sample/",
-									"/samples");  
+									"/\.sample/",
+									"/\.samples/",
+									"/\.Sample/",
+									"/\.Samples/");  
         		foreach($forbiden as $value)
 				{        
 					if(preg_match($value, $chaine)) $bool = true;
