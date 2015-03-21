@@ -120,8 +120,10 @@ if($_SESSION['lvl'] == 0 || $_SESSION['lvl'] == 1)
 			else{echo '<li><div id="content_list" class="cat"><a href="index.php?cat=Musiques" class="url">Musiques</a></div></li>';}		
 			if($url_egal[$nb_egal] == "eBooks"){echo '<li><div id="content_list" class="cat-current"><a href="index.php?cat=eBooks" class="url">eBooks</a></div></li>';}
 			else{echo '<li><div id="content_list" class="cat"><a href="index.php?cat=eBooks" class="url">eBooks</a></div></li>';}	
-			if($url_egal[$nb_egal] == "Emissions"){echo '<li><div id="content_list" class="cat-current"><a href="index.php?cat=Emissions" class="url">Replay Tv</a></div></li>';}
-			else{echo '<li><div id="content_list" class="cat"><a href="index.php?cat=Emissions" class="url">Replay TV</a></div></li>';}
+			//if($url_egal[$nb_egal] == "Emissions"){echo '<li><div id="content_list" class="cat-current"><a href="index.php?cat=Emissions" class="url">Replay Tv</a></div></li>';}
+			//else{echo '<li><div id="content_list" class="cat"><a href="index.php?cat=Emissions" class="url">Replay TV</a></div></li>';}
+			if($url_egal[$nb_egal] == "Docs"){echo '<li><div id="content_list" class="cat-current"><a href="index.php?cat=Docs" class="url"><b>Docs</b><font color="red"><i> new :)</i></font></a></div></li>';}
+			else{echo '<li><div id="content_list" class="cat"><a href="index.php?cat=Docs" class="url"><b>Docs</b><font color="red"><i> new :)</i></font></a></div></li>';}	
 			if($url_egal[$nb_egal] == "Autre"){echo '<li><div id="content_list" class="cat-current"><a href="index.php?cat=Autre" class="url">Autre</a></div></li>';}
 			else{echo '<li><div id="content_list" class="cat"><a href="index.php?cat=Autre" class="url">Autre</a></div></li>';}					
 		
